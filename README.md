@@ -21,7 +21,7 @@ import { CaverModule } from 'nest-caver';
 @Module({
     imports: [
         CaverModule.forRoot({
-            name: 'eth',
+            name: 'klay',
             url: 'http://localhost:3450',
         }),
     ]
@@ -71,8 +71,8 @@ export class SomeClass {
     ) {}
     
     async method(): Promise<number> {
-        const client = this.caverService.getClient('eth'); // we are give name of client in config file
-        return await client.eth.getChainId();
+        const client = this.caverService.getClient('klay'); // we are give name of client in config file
+        return await client.klay.getChainId();
     }
 }
 ```
