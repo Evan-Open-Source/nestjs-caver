@@ -1,15 +1,15 @@
 {
-  "name": "nest-web3",
+  "name": "nest-caver",
   "version": "1.1.1",
   "author": {
-    "name": "Maxim Markin",
-    "email": "mxrkin@yandex.ru"
+    "name": "Taehee Evan Kim",
+    "email": "godtaeheedev@gmail.com"
   },
   "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/owl1n/nestjs-web3.git"
+    "url": "https://github.com/Evan-Open-Source/nestjs-caver"
   },
   "scripts": {
     "build": "rimraf dist && tsc && npm run build:index",
@@ -20,10 +20,9 @@
   "dependencies": {
     "@nestjs/common": "^8.2.6",
     "@nestjs/core": "^8.2.6",
+    "caver-js": "^1.9.1-rc.4",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0",
-    "web3": "^1.7.3",
-    "web3-core-helpers": "^1.7.3"
+    "rxjs": "^7.2.0"
   },
   "devDependencies": {
     "@types/node": "*",
@@ -39,10 +38,10 @@
   "keywords": [
     "nestjs",
     "eth",
-    "web3",
+    "caver",
     "nestjs-eth",
-    "nestjs-web3",
-    "web3js",
+    "nestjs-caver",
+    "caver-js",
     "ethereum",
     "blockchain"
   ]
