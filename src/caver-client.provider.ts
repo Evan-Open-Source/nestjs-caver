@@ -3,6 +3,7 @@ import { CaverModuleAsyncOptions, CaverModuleOptions } from './caver.interface';
 import { Provider } from '@nestjs/common';
 import { CAVER_CLIENT, CAVER_MODULE_OPTIONS } from './caver.constants';
 import { randomUUID } from 'crypto';
+import { HttpProviderOptions } from 'caver-js/types/packages/caver-core-requestmanager/caver-providers-http/src';
 
 export class CaverClientError extends Error {}
 export interface CaverClient {
@@ -13,7 +14,12 @@ export interface CaverClient {
 export const getClient = async (
   options: CaverModuleOptions,
 ): Promise<Caver> => {
-  const { url } = options;
+  const { url, headers } = options;
+  if (headers) {
+    return new Caver(
+      new Caver.providers.HttpProvider(url, { headers } as HttpProviderOptions),
+    );
+  }
   return new Caver(url);
 };
 
